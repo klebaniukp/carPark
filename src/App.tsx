@@ -1,20 +1,25 @@
-import React from "react";
-import "./App.css";
+import React from 'react';
+import './App.css';
+import { Car } from './components/organisms/Car';
 
 function App() {
-    // const url = "https://dev.vozilla.pl/api-client-portal/";
+    // const url = 'https://dev.vozilla.pl/api-client-portal/';
     // fetch(url, {
-    //     method: "GET",
+    //     method: 'GET',
     //     headers: {
-    //         "x-ctx-organization-id": "38c6047f-d9fd-496b-b4d6-27785499c6d7",
+    //         'x-ctx-organization-id': '38c6047f-d9fd-496b-b4d6-27785499c6d7',
     //     },
     // }).then((res) => {
     //     const data = res;
     //     console.log(data);
     // });
+
     return (
         <>
-            <div className="App">dfnsf app</div>
+            <div className={'d-flex flex-wrap flex-row justify-content-center'}>
+                <Car />
+                <Car />
+            </div>
         </>
     );
 }
