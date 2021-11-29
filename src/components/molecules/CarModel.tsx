@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { CarImage } from '../atoms/CarImage';
 import { ProgressBarCustom } from '../atoms/ProgressBarCustom';
-import { CarName } from '../atoms/CarName';
+import { Name } from '../atoms/Name';
 
 export const CarModel = (props: {
     width: string;
@@ -25,7 +25,7 @@ export const CarModel = (props: {
                     onMouseLeave={() => setIsHover(false)}
                 >
                     <CarImage width={props.width} />
-                    <CarName name={'skoda octavia superb'} />
+                    <Name name={'skoda octavia superb'} isLarge={false} />
                     <ProgressBarCustom
                         width={props.barWidth}
                         energy={props.energy}
@@ -43,7 +43,7 @@ export const CarModel = (props: {
                     onMouseLeave={() => setIsHover(false)}
                 >
                     <CarImage width={props.width} />
-                    <CarName name={'skoda octavia superb'} />
+                    <Name name={'skoda octavia superb'} isLarge={false} />
                 </div>
             )}
         </>

@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import { CarModel } from '../molecules/CarModel';
-import { ProgressBar } from 'react-bootstrap';
-
 
 export const Car = () => {
     const [energy, setEnergy] = useState(67);

@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Car } from './components/organisms/Car';
+import { SideBar } from './components/organisms/SideBar';
 
 function App() {
     // const url = 'https://dev.vozilla.pl/api-client-portal/';
@@ -16,7 +17,11 @@ function App() {
 
     return (
         <>
-            <div className={'d-flex flex-wrap flex-row justify-content-center'}>
+            <SideBar />
+            <div
+                className={'d-flex flex-wrap flex-row justify-content-center'}
+                style={{ width: '74vw' }}
+            >
                 <Car />
                 <Car />
             </div>
