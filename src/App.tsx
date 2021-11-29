@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    // const url = "https://dev.vozilla.pl/api-client-portal/";
+    // fetch(url, {
+    //     method: "GET",
+    //     headers: {
+    //         "x-ctx-organization-id": "38c6047f-d9fd-496b-b4d6-27785499c6d7",
+    //     },
+    // }).then((res) => {
+    //     const data = res;
+    //     console.log(data);
+    // });
+    return (
+        <>
+            <div className="App">dfnsf app</div>
+        </>
+    );
 }
 
 export default App;
