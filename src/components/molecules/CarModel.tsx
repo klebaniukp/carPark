@@ -7,6 +7,7 @@ export const CarModel = (props: {
     width: string;
     energy: number;
     barWidth: string;
+    carName: string;
 }) => {
     const [isHover, setIsHover] = useState(false);
 
@@ -25,7 +26,7 @@ export const CarModel = (props: {
                     onMouseLeave={() => setIsHover(false)}
                 >
                     <CarImage width={props.width} />
-                    <Name name={'skoda octavia superb'} isLarge={false} />
+                    <Name name={props.carName} isLarge={false} />
                     <ProgressBarCustom
                         width={props.barWidth}
                         energy={props.energy}
@@ -43,7 +44,7 @@ export const CarModel = (props: {
                     onMouseLeave={() => setIsHover(false)}
                 >
                     <CarImage width={props.width} />
-                    <Name name={'skoda octavia superb'} isLarge={false} />
+                    <Name name={props.carName} isLarge={false} />
                 </div>
             )}
         </>

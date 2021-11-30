@@ -1,5 +1,6 @@
 import React from 'react';
 import { Name } from '../atoms/Name';
+import { Filters } from './Filters';
 
 export const SideBar = () => {
     return (
@@ -13,23 +14,9 @@ export const SideBar = () => {
                 <div className={'border-bottom'}>
                     <Name name={'Information'} isLarge={true} />
                 </div>
-
-                {/* <div
-                // className={'vw-30 vh-100'}
-                >
-                    fds <br />
-                    fds <br />
-                    fds <br />
-                    fds <br />
-                    fds <br />
-                    fds <br />
-                    fds <br />
-                    fds <br />
-                    fds <br />
-                    fds <br />
-                    fds <br />
-                    fds <br />
-                </div> */}
+                <div className={'border-bottom'}>
+                    <Filters />
+                </div>
             </div>
         </>
     );
