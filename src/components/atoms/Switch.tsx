@@ -1,4 +1,5 @@
 import React from 'react';
+import { Name } from './Name';
 
 export const Switch = (props: { value: string; isChecked: boolean }) => {
     return (
@@ -21,7 +22,7 @@ export const Switch = (props: { value: string; isChecked: boolean }) => {
                 className='form-check-label'
                 htmlFor='flexSwitchCheckChecked'
             >
-                {props.value}
+                <Name name={props.value} isLarge={false} />
             </label>
         </div>
     );

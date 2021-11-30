@@ -10,7 +10,7 @@ export const Car = () => {
                 width='11vw'
                 barWidth={'10vw'}
                 energy={energy}
-                carName={'audi A7'}
+                carName={'Enigma Python Car'}
             />
         </div>
     );
