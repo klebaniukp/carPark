@@ -3,7 +3,7 @@ import https from 'https';
 
 const url = 'https://dev.vozilla.pl/api-client-portal/map?objectType=VEHICLE';
 
-// const api = axios.create({
+// const API = axios.create({
 //     baseURL: url,
 //     headers: {
 //         'Content-Type': 'application/json',
@@ -12,7 +12,9 @@ const url = 'https://dev.vozilla.pl/api-client-portal/map?objectType=VEHICLE';
 //     httpsAgent: new https.Agent({ rejectUnauthorized: false }),
 // });
 
-export const vehicles = () => {
+// export const fetchVehicles = () => API.get('/');
+
+export const fetchVehicles = () =>
     axios({
         url: url,
         method: 'GET',
@@ -21,14 +23,4 @@ export const vehicles = () => {
         },
         responseType: 'json',
         httpsAgent: new https.Agent({ rejectUnauthorized: false }),
-    })
-        .then((response) => {
-            console.log(`typeof response: ${typeof response}`);
-            console.log(response.data.objects[0].discriminator);
-        })
-        .catch((err) => {
-            console.log(err);
-        });
-};
-
-//todo: add data to context ( when its done )
+    });

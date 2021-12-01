@@ -5,18 +5,18 @@ export interface IVehicle {
     description: string | null;
     discriminator: string;
     id: string;
-    location: ILocation;
+    location: ILocation | null;
     locationDescription: string | null;
-    mapColor: IMapColor;
+    mapColor: IMapColor | null;
     metadata: object | null;
     name: string;
-    picture: IPicture;
+    picture: IPicture | null;
     platesNumber: string;
     promotion: string | null;
     rangeKm: number;
     reservation: string | null; //string with date
     reservationEnd: string | null; //string with date
-    sidNumber: string;
+    sideNumber: string;
     status: string; // available or not
     type: string;
 }
@@ -37,3 +37,5 @@ interface IPicture {
     extension: string | null;
     contentType: string | null;
 }
+
+export {};

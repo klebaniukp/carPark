@@ -2,19 +2,27 @@ import React, {
     createContext,
     useContext,
     useState,
+    useEffect,
     SetStateAction,
     Dispatch,
 } from 'react';
-import { IVehicle } from '../types/types';
+// import { IVehicle } from '../types/types';
+import { getVehicles } from '../services/getVehicles';
 
 type ContextType = {
-    vehicles: IVehicle[];
-    setVehicles: Dispatch<SetStateAction<IVehicle[]>>;
+    // vehicles: IVehicle[] | any;
+    // setVehicles: Dispatch<SetStateAction<IVehicle[] | any>>;
+    // fetchingVehicles: () => any;
+
+    vehicles: any;
+    setVehicles: Dispatch<SetStateAction<any>>;
+    // fetchingVehicles: () => any;
 };
 
 const VehicleContext = createContext<ContextType>({
     vehicles: [],
     setVehicles: () => {},
+    // fetchingVehicles: () => {}
 });
 
 export const useVehicleContext = () => {
@@ -32,7 +40,11 @@ export const VehicleProvider = ({
 }: {
     children: React.ReactNode;
 }) => {
-    const [vehicles, setVehicles] = useState<IVehicle[]>([]);
+    const [vehicles, setVehicles] = useState<any>([]);
+
+    useEffect(() => {
+        getVehicles().then((data) => setVehicles(data));
+    }, []);
 
     return (
         <VehicleContext.Provider value={{ vehicles, setVehicles }}>

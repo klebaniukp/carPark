@@ -1,30 +1,12 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import { Car } from './components/organisms/Car';
 import { SideBar } from './components/organisms/SideBar';
-import https from 'https';
-import axios from 'axios';
+import { useVehicleContext } from './context/VehicleContext';
 
-function App() {
-    const url =
-        'https://dev.vozilla.pl/api-client-portal/map?objectType=VEHICLE';
-    
-        axios({
-        url: url,
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        responseType: 'json',
-        httpsAgent: new https.Agent({ rejectUnauthorized: false }),
-    })
-        .then((response) => {
-            console.log(`typeof response: ${typeof response}`);
-            console.log(response.data.objects[0].discriminator);
-        })
-        .catch((err) => {
-            console.log(err);
-        });
+export default function App() {
+    // const { vehicles, setVehicles } = useVehicleContext();
+    // const [myVehicles, setMyVehicles] = useState('');
 
     return (
         <>
@@ -35,9 +17,32 @@ function App() {
             >
                 <Car />
                 <Car />
+
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <div
+                    className={
+                        'd-flex flex-wrap justify-content-cente text-wrap'
+                    }
+                    style={{ width: '10vw' }}
+                >
+                    {/* My vehicles: {myVehicles} */}
+                </div>
             </div>
         </>
     );
 }
-
-export default App;

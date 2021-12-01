@@ -1,14 +1,17 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { routes } from '../routes/index';
-import { Main } from './Main';
+import { VehicleProvider } from '../context/VehicleContext';
+import { HomeView } from './HomeView';
 
 export const Root = () => {
     return (
-        <BrowserRouter>
-            <Switch>
-                <Route exact path={routes.home} component={Main} />
-            </Switch>
-        </BrowserRouter>
+        <VehicleProvider>
+            <BrowserRouter>
+                <Switch>
+                    <Route exact path={routes.home} component={HomeView} />
+                </Switch>
+            </BrowserRouter>
+        </VehicleProvider>
     );
 };
