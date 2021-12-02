@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Name } from '../atoms/Name';
-import { CarModel } from '../molecules/CarModel';
-import { Filters } from './Filters';
+import { Name } from '../../atoms/layoutComps/Name';
+import { CarModel } from '../../molecules/carComps/CarModel';
+import { Filters } from '../filterComps/Filters';
 
 export const SideBar = () => {
     const [isHover, setIsHover] = useState(false);

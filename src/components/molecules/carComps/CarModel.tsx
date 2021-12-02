@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { CarImage } from '../atoms/CarImage';
-import { ProgressBarCustom } from '../atoms/ProgressBarCustom';
-import { Name } from '../atoms/Name';
+import { CarImage } from '../../atoms/carComps/CarImage';
+import { ProgressBarCustom } from '../../atoms/layoutComps/ProgressBarCustom';
+import { Name } from '../../atoms/layoutComps/Name';
 
 export const CarModel = (props: {
     width: string;
@@ -30,6 +30,7 @@ export const CarModel = (props: {
                     <ProgressBarCustom
                         width={props.barWidth}
                         energy={props.energy}
+                        isProgressBardAnimated={isHover}
                     />
                 </div>
             ) : (
@@ -45,6 +46,11 @@ export const CarModel = (props: {
                 >
                     <CarImage width={props.width} />
                     <Name name={props.carName} isLarge={false} />
+                    <ProgressBarCustom
+                        width={props.barWidth}
+                        energy={props.energy}
+                        isProgressBardAnimated={isHover}
+                    />
                 </div>
             )}
         </>

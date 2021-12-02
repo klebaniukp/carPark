@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import { Car } from './components/organisms/Car';
-import { SideBar } from './components/organisms/SideBar';
+import { Car } from './components/organisms/carComps/Car';
+import { SideBar } from './components/organisms/layoutComps/SideBar';
 
 export default function App() {
     // const { vehicles, setVehicles } = useVehicleContext();
@@ -14,8 +14,18 @@ export default function App() {
                 className={'d-flex flex-wrap flex-row justify-content-center'}
                 style={{ width: '74vw' }}
             >
-                <Car energy={0} carName={''} />
-                <Car energy={0} carName={''} />
+                <Car
+                    energy={0}
+                    carName={'Java Car'}
+                    carWidth={'11vw'}
+                    barWidth={'10vw'}
+                />
+                <Car
+                    energy={0}
+                    carName={'Enigma Python'}
+                    carWidth={'11vw'}
+                    barWidth={'10vw'}
+                />
 
                 <br />
                 <br />

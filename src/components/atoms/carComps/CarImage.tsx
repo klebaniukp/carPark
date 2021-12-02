@@ -1,5 +1,5 @@
 import React from 'react';
-import carLogo from '../../img/carLogo.png';
+import carLogo from '../../../img/carLogo.png';
 
 export const CarImage = (props: { width: string }) => {
     return (

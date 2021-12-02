@@ -38,4 +38,13 @@ interface IPicture {
     contentType: string | null;
 }
 
-export {};
+export interface IInfo {
+    color: string;
+    discriminator: string;
+    id: string;
+    platesNumber: string;
+    rangeKm: number;
+    sideNumber: string;
+    status: string;
+    type: string;
+}
