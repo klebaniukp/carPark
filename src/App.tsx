@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import { Car } from './components/organisms/Car';
 import { SideBar } from './components/organisms/SideBar';
-import { useVehicleContext } from './context/VehicleContext';
 
 export default function App() {
     // const { vehicles, setVehicles } = useVehicleContext();
@@ -15,8 +14,8 @@ export default function App() {
                 className={'d-flex flex-wrap flex-row justify-content-center'}
                 style={{ width: '74vw' }}
             >
-                <Car />
-                <Car />
+                <Car energy={0} carName={''} />
+                <Car energy={0} carName={''} />
 
                 <br />
                 <br />
