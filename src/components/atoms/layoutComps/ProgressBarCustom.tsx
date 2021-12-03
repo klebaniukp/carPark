@@ -7,22 +7,22 @@ export const ProgressBarCustom = (props: {
     isProgressBardAnimated: boolean;
 }) => {
     return (
-        <>
+        <div style={{ fontSize: '2.5vh' }}>
             {props.isProgressBardAnimated ? (
                 <div style={{ width: props.width }}>
                     <ProgressBar animated now={props.energy} />
                     <div className={'text-center'}>
-                        <h5>{props.energy}%</h5>
+                        <p>{props.energy}%</p>
                     </div>
                 </div>
             ) : (
                 <div style={{ width: props.width }}>
                     <ProgressBar now={props.energy} />
                     <div className={'text-center'}>
-                        <h5>{props.energy}%</h5>
+                        <p>{props.energy}%</p>
                     </div>
                 </div>
             )}
-        </>
+        </div>
     );
 };

@@ -17,10 +17,10 @@ export const CarModel = (props: {
                 <div
                     style={{
                         width: props.width,
-                        backgroundColor: '#d9d9d9',
+                        // backgroundColor: '#d9d9d9',
                     }}
                     className={
-                        'd-flex flex-column justify-content-center align-items-center '
+                        'd-flex flex-column justify-content-center align-items-center border border-1 p-1'
                     }
                     onMouseEnter={() => setIsHover(true)}
                     onMouseLeave={() => setIsHover(false)}

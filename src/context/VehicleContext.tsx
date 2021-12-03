@@ -8,6 +8,7 @@ import React, {
 } from 'react';
 // import { IVehicle } from '../types/types';
 import { getVehicles } from '../services/getVehicles';
+import { Navbar } from '../components/organisms/layoutComps/Navbar';
 
 type ContextType = {
     // vehicles: IVehicle[] | any;
@@ -48,6 +49,7 @@ export const VehicleProvider = ({
 
     return (
         <VehicleContext.Provider value={{ vehicles, setVehicles }}>
+            <Navbar />
             {children}
         </VehicleContext.Provider>
     );
