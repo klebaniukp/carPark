@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ProgressBar } from 'react-bootstrap';
 
 export const ProgressBarCustom = (props: {
@@ -6,11 +6,9 @@ export const ProgressBarCustom = (props: {
     energy: number;
     isProgressBardAnimated: boolean;
 }) => {
-    const [isAnimated, setIsAnimated] = useState(props.isProgressBardAnimated);
-
     return (
         <>
-            {isAnimated ? (
+            {props.isProgressBardAnimated ? (
                 <div style={{ width: props.width }}>
                     <ProgressBar animated now={props.energy} />
                     <div className={'text-center'}>

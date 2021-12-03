@@ -1,14 +1,19 @@
 import { useState } from 'react';
 
-export const LiBadge = (props: { isActive: boolean | undefined }) => {
-    const [isActive, setIsActive] = useState(false);
-
+export const LiBadge = (props: {
+    isActive: boolean | undefined;
+    value: string | undefined;
+}) => {
     return (
         <>
-            {isActive ? (
-                <span className='badge bg-succes rounded-pill'>status</span>
+            {props.isActive ? (
+                <span className='badge bg-success rounded-pill'>
+                    {props.value}
+                </span>
             ) : (
-                <span className='badge bg-danger rounded-pill'>status</span>
+                <span className='badge bg-danger rounded-pill'>
+                    {props.value}
+                </span>
             )}
         </>
     );

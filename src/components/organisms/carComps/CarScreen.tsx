@@ -17,9 +17,6 @@ export const CarScreen = (props: { carIndex: number }) => {
             }
         >
             {vehicles.map((car: any) => {
-                console.log(
-                    `car: ${car}, batteryLevePct: ${car.batteryLevelPct}, name: ${car.name}`
-                );
                 let info: IInfo = {
                     color: car.color,
                     discriminator: car.discriminator,
@@ -40,16 +37,22 @@ export const CarScreen = (props: { carIndex: number }) => {
                             'd-flex flex-row flex-wrap justify-content-center align-items-center'
                         }
                     >
-                        <div className={'m-2'}>
-                            <Car
-                                energy={car.batteryLevelPct}
-                                carName={car.name}
-                                carWidth={'15vw'}
-                                barWidth={'14vw'}
-                            />
-                        </div>
-                        <div className={'m-2'}>
-                            <CarInformation info={info} />
+                        <div
+                            className={
+                                'd-flex flex-wrap flex-row justify-content-evenly align-items-center border border-2 w-75 h-50 bg-light'
+                            }
+                        >
+                            <div className={'m-2'}>
+                                <Car
+                                    energy={car.batteryLevelPct}
+                                    carName={car.name}
+                                    carWidth={'15vw'}
+                                    barWidth={'14vw'}
+                                />
+                            </div>
+                            <div className={'m-2'}>
+                                <CarInformation info={info} />
+                            </div>
                         </div>
                     </div>
                 );

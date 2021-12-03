@@ -1,69 +1,59 @@
 import React from 'react';
 import { Name } from '../../atoms/layoutComps/Name';
 import { IInfo } from '../../../types/types';
+import { ListItemEnhanced } from '../listComps/ListItemEnhanced';
+import { info } from 'console';
 
 export const CarInformation = (props: { info: IInfo }) => {
+    const { info } = props;
     return (
-        <>
-            <div
-                className={
-                    'd-flex flex-column align-items-center justify-content-center text-center card border-2 p-3 bg-light'
-                }
-                style={{ fontSize: '3vh', width: '70%', height: '40vh' }}
-            >
-                <p
-                    className={
-                        'd-flex flex-row text-center flex-wrap justify-content-between'
-                    }
-                >
-                    <Name
-                        name={`color: ${props.info.color} `}
-                        isLarge={false}
-                    />
-                    <Name
-                        name={`discriminator: ${props.info.discriminator}`}
-                        isLarge={false}
-                    />
-                </p>
+        <div className={'d-flex flex-row'}>
+            <div className={'d-flex flex-column'}>
+                <ListItemEnhanced
+                    title={'status'}
+                    subtitle={info.status}
+                    isActive={true}
+                    value={' '}
+                />
 
-                <p
-                    className={
-                        'd-flex flex-row text-center flex-wrap justify-content-between'
-                    }
-                >
-                    <Name name={`id: ${props.info.id} `} isLarge={false} />
-                    <Name
-                        name={`platesNumber: ${props.info.platesNumber}`}
-                        isLarge={false}
-                    />
-                </p>
-
-                <p
-                    className={
-                        'd-flex flex-row text-center flex-wrap justify-content-between'
-                    }
-                >
-                    <Name
-                        name={`rangeKm: ${JSON.stringify(props.info.rangeKm)} `}
-                        isLarge={false}
-                    />
-                    <Name
-                        name={`sideNumber: ${props.info.sideNumber}`}
-                        isLarge={false}
-                    />
-                </p>
-                <p
-                    className={
-                        'd-flex flex-row text-center flex-wrap justify-content-between'
-                    }
-                >
-                    <Name
-                        name={`status: ${props.info.status} `}
-                        isLarge={false}
-                    />
-                    <Name name={`type: ${props.info.type}`} isLarge={false} />
-                </p>
+                <ListItemEnhanced
+                    title={'color'}
+                    subtitle={info.color}
+                    isActive={false}
+                    value={undefined}
+                />
+                <ListItemEnhanced
+                    title={'range km'}
+                    subtitle={JSON.stringify(info.rangeKm)}
+                    isActive={false}
+                    value={undefined}
+                />
             </div>
-        </>
+
+            <div className={'d-flex flex-column'}>
+                <ListItemEnhanced
+                    title={'discriminator'}
+                    subtitle={info.discriminator}
+                    isActive={false}
+                    value={undefined}
+                />
+
+                <ListItemEnhanced
+                    title={'plates number'}
+                    subtitle={info.platesNumber}
+                    isActive={false}
+                    value={undefined}
+                />
+                <ListItemEnhanced
+                    title={'side number'}
+                    subtitle={info.sideNumber}
+                    isActive={false}
+                    value={undefined}
+                />
+            </div>
+
+            {/* <div className={'d-flex flex-column'}>
+            </div> */}
+        </div>
     );
 };
