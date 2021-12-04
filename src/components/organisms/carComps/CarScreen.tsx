@@ -4,11 +4,8 @@ import { useVehicleContext } from '../../../context/VehicleContext';
 import { CarInformation } from '../../molecules/carComps/CarInformation';
 import { IInfo } from '../../../types/types';
 
-export const CarScreen = (props: { carIndex: number }) => {
+export const CarScreen = () => {
     const { vehicles } = useVehicleContext();
-    // let info: IInfo;
-
-    useEffect(() => {}, []);
 
     return (
         <div

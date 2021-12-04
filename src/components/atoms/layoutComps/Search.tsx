@@ -6,6 +6,7 @@ export const Search = () => {
             className='form-control me-2'
             type='search'
             placeholder='Search'
+            name='search'
         ></input>
     );
 };

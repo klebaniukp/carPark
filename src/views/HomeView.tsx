@@ -14,21 +14,8 @@ export const HomeView = () => {
 
     return (
         <>
-            {/* {vehicles.map(
-                (vehicle: { name: string; batteryLevelPct: number }) => {
-                    if (vehicle !== undefined) {
-                        setEnergy(vehicle.batteryLevelPct);
-                        setCarName(vehicle.name);
-
-                        <>
-                            <CarScreen carIndex={vehicles} />
-                            <div>home view</div>
-                        </>;
-                    }
-                }
-            )} */}
             {isRenderPossible ? (
-                <CarScreen carIndex={vehicles} />
+                <CarScreen />
             ) : (
                 <div>
                     Rendering is not possible, check your internet connection

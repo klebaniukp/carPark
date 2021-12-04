@@ -8,7 +8,7 @@ export interface IVehicle {
     location: ILocation | null;
     locationDescription: string | null;
     mapColor: IMapColor | null;
-    metadata: object | null;
+    metadata: string | null;
     name: string;
     picture: IPicture | null;
     platesNumber: string;

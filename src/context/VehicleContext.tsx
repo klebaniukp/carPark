@@ -6,24 +6,18 @@ import React, {
     SetStateAction,
     Dispatch,
 } from 'react';
-// import { IVehicle } from '../types/types';
+import { IVehicle } from '../types/types';
 import { getVehicles } from '../services/getVehicles';
 import { Navbar } from '../components/organisms/layoutComps/Navbar';
 
 type ContextType = {
-    // vehicles: IVehicle[] | any;
-    // setVehicles: Dispatch<SetStateAction<IVehicle[] | any>>;
-    // fetchingVehicles: () => any;
-
-    vehicles: any;
-    setVehicles: Dispatch<SetStateAction<any>>;
-    // fetchingVehicles: () => any;
+    vehicles: IVehicle[];
+    setVehicles: Dispatch<SetStateAction<IVehicle[]>>;
 };
 
 const VehicleContext = createContext<ContextType>({
     vehicles: [],
     setVehicles: () => {},
-    // fetchingVehicles: () => {}
 });
 
 export const useVehicleContext = () => {
@@ -41,7 +35,7 @@ export const VehicleProvider = ({
 }: {
     children: React.ReactNode;
 }) => {
-    const [vehicles, setVehicles] = useState<any>([]);
+    const [vehicles, setVehicles] = useState<IVehicle[]>([]);
 
     useEffect(() => {
         getVehicles().then((data) => setVehicles(data));
