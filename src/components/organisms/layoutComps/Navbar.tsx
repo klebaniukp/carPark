@@ -25,8 +25,7 @@ export const Navbar = () => {
         e.preventDefault();
         const form = document.querySelector('#search') as HTMLFormElement;
         const name = form.search.value.toLowerCase();
-        console.log(searching(form, cars, name));
-        setVehicles(() => searching(form, cars, name));
+        setVehicles(() => searching(cars, name));
     };
 
     return (

@@ -1,15 +1,14 @@
-export const searching = (
-    form: HTMLFormElement,
-    vehicles: object[],
-    name: string
-) => {
+import { IVehicle } from '../types/types';
+
+export const searching = (vehicles: IVehicle[], name: string) => {
     let returnedVehicles = new Array();
 
-    vehicles.map((vehicle: any) => {    
-        if (vehicle.name.toLowerCase().includes(name)) {
+    vehicles.map((car: IVehicle) => {
+        if (car.name.toLowerCase().includes(name)) {
             console.log(`succeded`);
-            returnedVehicles.push(vehicle);
+            returnedVehicles.push(car);
         }
+        return returnedVehicles;
     });
 
     return returnedVehicles;

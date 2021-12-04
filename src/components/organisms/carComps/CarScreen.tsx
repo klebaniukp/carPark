@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Car } from './Car';
 import { useVehicleContext } from '../../../context/VehicleContext';
 import { CarInformation } from '../../molecules/carComps/CarInformation';
-import { IInfo } from '../../../types/types';
+import { IInfo, IVehicle } from '../../../types/types';
 
 export const CarScreen = () => {
     const { vehicles } = useVehicleContext();
@@ -13,7 +13,7 @@ export const CarScreen = () => {
                 'd-flex flex-wrap flex-row align-items-center text-center justify-content-center'
             }
         >
-            {vehicles.map((car: any) => {
+            {vehicles.map((car: IVehicle) => {
                 let info: IInfo = {
                     color: car.color,
                     discriminator: car.discriminator,

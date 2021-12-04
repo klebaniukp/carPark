@@ -1,6 +1,6 @@
 export interface IVehicle {
     address: string | null;
-    batteryLevel: number;
+    batteryLevelPct: number;
     color: string;
     description: string | null;
     discriminator: string;
