@@ -3,7 +3,10 @@ import { Name } from '../layoutComps/Name';
 
 export const Switch = (props: { value: string; isChecked: boolean }) => {
     return (
-        <div className='form-check form-switch'>
+        <div
+            className='d-flex flex-row align-items-center text-center justify-content-center form-check form-switch'
+            // style={{ fontSize: '4vh' }}
+        >
             {props.isChecked ? (
                 <input
                     className='form-check-input'
@@ -18,12 +21,6 @@ export const Switch = (props: { value: string; isChecked: boolean }) => {
                     id='flexSwitchCheckChecked'
                 />
             )}
-            <label
-                className='form-check-label'
-                htmlFor='flexSwitchCheckChecked'
-            >
-                <Name name={props.value} isLarge={false} />
-            </label>
         </div>
     );
 };

@@ -3,10 +3,10 @@ import React from 'react';
 export const FormInput = (props: {
     type: string;
     value: string;
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    // onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }) => {
     return (
-        <div className='form-floating mb-3'>
+        <div className='form-floating' style={{ height: '2vh', width: '10vw' }}>
             <input
                 type={props.type}
                 className='form-control'

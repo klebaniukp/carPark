@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import { FormSubmit } from '../../atoms/formComps/FormSubmit';
 import { SearchInfoButton } from '../../atoms/layoutComps/SearchInfoButton';
+import { Filters } from './Filters';
+import { Switch } from '../../atoms/filterComps/Switch';
 
 export const ModalCustom = (props: { value: string }) => {
     const [show, setShow] = useState(false);
@@ -34,8 +36,9 @@ export const ModalCustom = (props: { value: string }) => {
                 <Modal.Header closeButton>
                     <Modal.Title>{props.value}</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
-                    Woohoo, you're reading this text in a modal!
+                <Modal.Body style={{}}>
+                    <Filters />
+                    {/* <Switch value={'status'} isChecked={true} /> */}
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant='secondary' onClick={handleClose}>
