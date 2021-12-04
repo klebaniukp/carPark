@@ -1,11 +1,26 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Car } from './Car';
 import { useVehicleContext } from '../../../context/VehicleContext';
 import { CarInformation } from '../../molecules/carComps/CarInformation';
 import { IInfo, IVehicle } from '../../../types/types';
+import { useFiltersContext } from '../../../context/FiltersContext';
 
 export const CarScreen = () => {
     const { vehicles } = useVehicleContext();
+    const {
+        status,
+        setStatus,
+        batteryLevelPct,
+        setBatteryLevelPct,
+        rangeKm,
+        setRangeKm,
+    } = useFiltersContext();
+
+    useEffect(() => {
+        setStatus(false);
+        setBatteryLevelPct(50);
+        setRangeKm(100);
+    }, []);
 
     return (
         <div

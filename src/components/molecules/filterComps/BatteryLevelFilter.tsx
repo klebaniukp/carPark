@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { ProgressBar } from 'react-bootstrap';
+import { useFiltersContext } from '../../../context/FiltersContext';
 
 export const BatteryLevelFilter = () => {
-    const [percentage, setPercentage] = useState(23);
+    const { batteryLevelPct, setBatteryLevelPct } = useFiltersContext();
 
     return (
         <div>
@@ -15,12 +16,12 @@ export const BatteryLevelFilter = () => {
                         min='0'
                         max='100'
                         type='number'
-                        value={percentage}
+                        value={batteryLevelPct}
                         className='form-control'
                         onChange={(e: React.SyntheticEvent) => {
                             const value = (e.currentTarget as HTMLInputElement)
                                 .value;
-                            setPercentage(parseInt(value));
+                            setBatteryLevelPct(parseInt(value));
                         }}
                     />
                     <span className='input-group-text'>%</span>
@@ -29,7 +30,7 @@ export const BatteryLevelFilter = () => {
             </div>
             <ProgressBar
                 animated
-                now={percentage}
+                now={batteryLevelPct}
                 style={{ width: '20vw' }}
             />
         </div>

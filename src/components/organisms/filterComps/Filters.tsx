@@ -3,9 +3,9 @@ import { StatusFilter } from '../../molecules/filterComps/StatusFilter';
 import { InputPrefixed } from '../../atoms/layoutComps/InputPrefixed';
 import { BatteryLevelFilter } from '../../molecules/filterComps/BatteryLevelFilter';
 
+
 export const Filters = () => {
     return (
-        <form>
             <div
                 className={
                     'd-flex align-items-center text-center justify-content-cetner flex-column'
@@ -29,6 +29,5 @@ export const Filters = () => {
                     <InputPrefixed firstValue={'km'} />
                 </div>
             </div>
-        </form>
     );
 };

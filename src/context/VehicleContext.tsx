@@ -8,7 +8,6 @@ import React, {
 } from 'react';
 import { IVehicle } from '../types/types';
 import { getVehicles } from '../services/getVehicles';
-import { Navbar } from '../components/organisms/layoutComps/Navbar';
 
 type ContextType = {
     vehicles: IVehicle[];
@@ -24,7 +23,9 @@ export const useVehicleContext = () => {
     const context = useContext(VehicleContext);
 
     if (!context) {
-        throw new Error('Error while reading context');
+        throw new Error(
+            'useFiltersContext must be used within FiltersContext.Provider'
+        );
     }
 
     return context;
@@ -43,7 +44,6 @@ export const VehicleProvider = ({
 
     return (
         <VehicleContext.Provider value={{ vehicles, setVehicles }}>
-            <Navbar />
             {children}
         </VehicleContext.Provider>
     );

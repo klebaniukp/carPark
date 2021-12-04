@@ -6,10 +6,12 @@ import { useVehicleContext } from '../../../context/VehicleContext';
 import { searching } from '../../../services/searching';
 import { getVehicles } from '../../../services/getVehicles';
 import { ModalCustom } from '../filterComps/ModalCustom';
+import { useFiltersContext } from '../../../context/FiltersContext';
 
 export const Navbar = () => {
     const { vehicles, setVehicles } = useVehicleContext();
     const [cars, setCars] = useState(vehicles);
+
 
     useEffect(() => {
         getVehicles()
