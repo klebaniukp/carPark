@@ -1,7 +1,7 @@
 import { IVehicle } from '../types/types';
 
 export const searching = (vehicles: IVehicle[], name: string) => {
-    let returnedVehicles = new Array();
+    let returnedVehicles = new Array<IVehicle>();
 
     vehicles.map((car: IVehicle) => {
         if (car.name.toLowerCase().includes(name)) {

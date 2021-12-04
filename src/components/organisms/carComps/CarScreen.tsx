@@ -3,24 +3,9 @@ import { Car } from './Car';
 import { useVehicleContext } from '../../../context/VehicleContext';
 import { CarInformation } from '../../molecules/carComps/CarInformation';
 import { IInfo, IVehicle } from '../../../types/types';
-import { useFiltersContext } from '../../../context/FiltersContext';
 
 export const CarScreen = () => {
     const { vehicles } = useVehicleContext();
-    const {
-        status,
-        setStatus,
-        batteryLevelPct,
-        setBatteryLevelPct,
-        rangeKm,
-        setRangeKm,
-    } = useFiltersContext();
-
-    useEffect(() => {
-        setStatus(false);
-        setBatteryLevelPct(50);
-        setRangeKm(100);
-    }, []);
 
     return (
         <div
@@ -39,6 +24,9 @@ export const CarScreen = () => {
                     status: car.status,
                     type: car.type,
                 };
+                console.log(
+                    `car: ${car.name}, battery level: ${car.batteryLevelPct}, status: ${car.status}`
+                );
                 return (
                     <div
                         style={{
