@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React from 'react';
 import { CarModel } from '../../molecules/carComps/CarModel';
 
 export const Car = (props: {
@@ -7,18 +7,12 @@ export const Car = (props: {
     carWidth: string;
     barWidth: string;
 }) => {
-    const [energy, setEnergy] = useState(0);
-
-    useEffect(() => {
-        setEnergy(props.energy);
-    }, []);
-
     return (
         <div className={'d-flex align-center justify-content-center'}>
             <CarModel
                 width={props.carWidth} //e.g. '11vw'
                 barWidth={props.barWidth} //e.g. '10vw'
-                energy={energy}
+                energy={props.energy}
                 carName={props.carName}
             />
         </div>

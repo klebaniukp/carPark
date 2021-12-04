@@ -27,6 +27,9 @@ export const CarScreen = () => {
                 console.log(
                     `car: ${car.name}, battery level: ${car.batteryLevelPct}, status: ${car.status}`
                 );
+                if (car.name.includes('Car')) {
+                    console.log(car.batteryLevelPct);
+                }
                 return (
                     <div
                         style={{

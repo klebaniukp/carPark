@@ -31,29 +31,16 @@ export const ModalCustom = (props: { value: string }) => {
         let returnedVehicles: IVehicle[] = [];
 
         cars.map((car: IVehicle) => {
-            // console.log(
-            //     `battery level: ${
-            //         car.batteryLevelPct
-            //     }, expected battery level: ${batteryLevelPct}, typeof: ${typeof batteryLevelPct} , typeof: ${typeof car.batteryLevelPct}`
-            // );
             if (
                 ((car.status === 'AVAILABLE' && status === true) ||
                     (car.status !== 'AVAILABLE' && status === false)) &&
                 car.batteryLevelPct >= batteryLevelPct &&
                 car.rangeKm >= rangeKm
             ) {
-                console.log(
-                    `expectations: status: ${status}, batteryLevelPct: ${batteryLevelPct}, rangeKm: ${rangeKm}`
-                );
-                console.log(
-                    `car added: ${car.name}, battery: ${car.batteryLevelPct}`
-                );
                 returnedVehicles.push(car);
             }
-
-            handleClose();
-            return returnedVehicles;
         });
+        handleClose();
         return returnedVehicles;
     };
 
