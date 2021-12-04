@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 export const NavbarBrand = (props: { brandName: string }) => {
     return (
-        <a href='/' className={'navbar-brand'} style={{fontSize: '3vh'}}>
+        <Link to='/' className={'navbar-brand'} style={{ fontSize: '3vh' }}>
             {props.brandName}
-        </a>
+        </Link>
     );
 };

@@ -9,14 +9,14 @@ import { MapView } from './MapView';
 export const Root = () => {
     return (
         <VehicleProvider>
-            <FiltersProvider>
-                <BrowserRouter>
+            <BrowserRouter>
+                <FiltersProvider>
                     <Switch>
                         <Route exact path={routes.home} component={HomeView} />
                         <Route exact path={routes.map} component={MapView} />
                     </Switch>
-                </BrowserRouter>
-            </FiltersProvider>
+                </FiltersProvider>
+            </BrowserRouter>
         </VehicleProvider>
     );
 };

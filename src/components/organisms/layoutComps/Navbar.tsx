@@ -6,10 +6,12 @@ import { useVehicleContext } from '../../../context/VehicleContext';
 import { searching } from '../../../services/searching';
 import { getVehicles } from '../../../services/getVehicles';
 import { ModalCustom } from '../filterComps/ModalCustom';
+import { useHistory } from 'react-router-dom';
 
 export const Navbar = () => {
     const { vehicles, setVehicles } = useVehicleContext();
     const [cars, setCars] = useState(vehicles);
+    const history = useHistory();
 
     useEffect(() => {
         getVehicles()
@@ -25,6 +27,7 @@ export const Navbar = () => {
         e.preventDefault();
         const form = document.querySelector('#search') as HTMLFormElement;
         const name = form.search.value.toLowerCase();
+        history.push(`/`);
         setVehicles(() => searching(cars, name));
     };
 

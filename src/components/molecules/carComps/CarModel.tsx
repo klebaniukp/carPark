@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { CarImage } from '../../atoms/carComps/CarImage';
 import { ProgressBarCustom } from '../../atoms/layoutComps/ProgressBarCustom';
 import { Name } from '../../atoms/layoutComps/Name';
+import { SearchInfoButton } from '../../atoms/layoutComps/SearchInfoButton';
+import { useHistory, Link } from 'react-router-dom';
 
 export const CarModel = (props: {
     width: string;
@@ -10,6 +12,7 @@ export const CarModel = (props: {
     carName: string;
 }) => {
     const [isHover, setIsHover] = useState(false);
+    const history = useHistory();
 
     return (
         <>
@@ -32,6 +35,12 @@ export const CarModel = (props: {
                         energy={props.energy}
                         isProgressBardAnimated={isHover}
                     />
+                    <Link to='/map'>
+                        <SearchInfoButton
+                            value={'Check location'}
+                            isSubmit={false}
+                        />
+                    </Link>
                 </div>
             ) : (
                 <div
@@ -51,6 +60,12 @@ export const CarModel = (props: {
                         energy={props.energy}
                         isProgressBardAnimated={isHover}
                     />
+                    <Link to='/map'>
+                        <SearchInfoButton
+                            value={'Check location'}
+                            isSubmit={false}
+                        />
+                    </Link>
                 </div>
             )}
         </>
