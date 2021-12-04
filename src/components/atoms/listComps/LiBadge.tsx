@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React from 'react';
 
 export const LiBadge = (props: {
     isActive: boolean | undefined;
@@ -20,3 +20,4 @@ export const LiBadge = (props: {
 };
 
 // badge for <li /> tag
+//is active: car status

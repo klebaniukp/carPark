@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 // import App from '../App';
-import { DisplayingCars } from '../components/organisms/carComps/DisplayingCars';
 import { CarScreen } from '../components/organisms/carComps/CarScreen';
 import { useVehicleContext } from '../context/VehicleContext';
 

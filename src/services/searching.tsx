@@ -5,7 +5,7 @@ export const searching = (
 ) => {
     let returnedVehicles = new Array();
 
-    vehicles.map((vehicle: any) => {
+    vehicles.map((vehicle: any) => {    
         if (vehicle.name.toLowerCase().includes(name)) {
             console.log(`succeded`);
             returnedVehicles.push(vehicle);

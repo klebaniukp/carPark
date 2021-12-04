@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { NavbarBrand as Title } from '../../atoms/layoutComps/NavbarBrand';
 import { Search } from '../../atoms/layoutComps/Search';
 import { SearchInfoButton as SearchButton } from '../../atoms/layoutComps/SearchInfoButton';
-import { NavbarInfoItem } from '../../molecules/LayoutComps/NavbarInfoItem';
 import { useVehicleContext } from '../../../context/VehicleContext';
 import { searching } from '../../../services/searching';
 import { getVehicles } from '../../../services/getVehicles';
+import { ModalCustom } from '../filterComps/ModalCustom';
 
 export const Navbar = () => {
     const { vehicles, setVehicles } = useVehicleContext();
@@ -23,7 +23,7 @@ export const Navbar = () => {
 
     const handleSubmit = (e: React.SyntheticEvent) => {
         e.preventDefault();
-        const form = document.querySelector('form') as HTMLFormElement;
+        const form = document.querySelector('#search') as HTMLFormElement;
         const name = form.search.value.toLowerCase();
         console.log(searching(form, cars, name));
         setVehicles(() => searching(form, cars, name));
@@ -35,13 +35,20 @@ export const Navbar = () => {
                 <div className='container-fluid' style={{ color: 'white' }}>
                     <div className={'d-flex flex-row nav-item'}>
                         <Title brandName={'Car Park'} />
-                        <NavbarInfoItem value={'Filter'} />
+                        <ModalCustom value={'Filters'} />
                     </div>
                     <div className={'d-flex flex-row nav-item'}>
-                        <form action='/' onSubmit={(e) => handleSubmit(e)}>
+                        <form
+                            action='/'
+                            id='search'
+                            onSubmit={(e) => handleSubmit(e)}
+                        >
                             <div className={'d-flex flex-row'}>
                                 <Search />
-                                <SearchButton value={'Search'} />
+                                <SearchButton
+                                    value={'Search'}
+                                    isSubmit={true}
+                                />
                             </div>
                         </form>
                     </div>
