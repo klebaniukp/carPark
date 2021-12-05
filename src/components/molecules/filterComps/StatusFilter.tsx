@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React from 'react';
 import { Switch } from '../../atoms/filterComps/Switch';
 import { useFiltersContext } from '../../../context/FiltersContext';
 

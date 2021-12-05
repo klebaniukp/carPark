@@ -1,8 +1,6 @@
 import React from 'react';
-import { Name } from '../../atoms/layoutComps/Name';
 import { IInfo } from '../../../types/types';
 import { ListItemEnhanced } from '../listComps/ListItemEnhanced';
-import { info } from 'console';
 
 export const CarInformation = (props: { info: IInfo }) => {
     const { info } = props;

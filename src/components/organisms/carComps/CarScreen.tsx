@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React from 'react';
 import { Car } from './Car';
 import { useVehicleContext } from '../../../context/VehicleContext';
 import { CarInformation } from '../../molecules/carComps/CarInformation';
@@ -24,12 +24,6 @@ export const CarScreen = () => {
                     status: car.status,
                     type: car.type,
                 };
-                console.log(
-                    `car: ${car.name}, battery level: ${car.batteryLevelPct}, status: ${car.status}`
-                );
-                if (car.name.includes('Car')) {
-                    console.log(car.batteryLevelPct);
-                }
                 return (
                     <div
                         style={{

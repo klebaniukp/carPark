@@ -1,5 +1,4 @@
 import React from 'react';
-import { Name } from '../layoutComps/Name';
 
 export const Switch = (props: { value: string; isChecked: boolean }) => {
     return (

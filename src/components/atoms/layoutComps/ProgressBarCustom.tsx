@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React from 'react';
 import { ProgressBar } from 'react-bootstrap';
 
 export const ProgressBarCustom = (props: {
@@ -14,7 +14,7 @@ export const ProgressBarCustom = (props: {
                     <div className={'text-center'}>
                         <p>{props.energy}%</p>
                     </div>
-                 </div>
+                </div>
             ) : (
                 <div style={{ width: props.width }}>
                     <ProgressBar now={props.energy} />

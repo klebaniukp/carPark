@@ -1,9 +1,10 @@
 import React from 'react';
+import { Map } from '../components/organisms/mapComps/Map';
 
 export const MapView = () => {
     return (
-        <div>
-            <h1>Detailed View</h1>
-        </div>
+        <>
+            <Map />
+        </>
     );
 };

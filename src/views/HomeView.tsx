@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-// import App from '../App';
 import { CarScreen } from '../components/organisms/carComps/CarScreen';
 import { useVehicleContext } from '../context/VehicleContext';
 
@@ -12,7 +11,7 @@ export const HomeView = () => {
     }, []);
 
     return (
-        <>
+        <div>
             {isRenderPossible ? (
                 <CarScreen />
             ) : (
@@ -21,6 +20,6 @@ export const HomeView = () => {
                     and then try again.
                 </div>
             )}
-        </>
+        </div>
     );
 };

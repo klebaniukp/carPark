@@ -12,11 +12,19 @@ import { getVehicles } from '../services/getVehicles';
 type ContextType = {
     vehicles: IVehicle[];
     setVehicles: Dispatch<SetStateAction<IVehicle[]>>;
+
+    mapVehicle: IVehicle[];
+    setMapVehicle: Dispatch<SetStateAction<IVehicle[]>>;
+
+    //map vehicle => single element array used to display clicked car on map
 };
 
 const VehicleContext = createContext<ContextType>({
     vehicles: [],
     setVehicles: () => {},
+
+    mapVehicle: [], //single element
+    setMapVehicle: () => {},
 });
 
 export const useVehicleContext = () => {
@@ -37,13 +45,16 @@ export const VehicleProvider = ({
     children: React.ReactNode;
 }) => {
     const [vehicles, setVehicles] = useState<IVehicle[]>([]);
+    const [mapVehicle, setMapVehicle] = useState<IVehicle[]>([]);
 
     useEffect(() => {
         getVehicles().then((data) => setVehicles(data));
     }, []);
 
     return (
-        <VehicleContext.Provider value={{ vehicles, setVehicles }}>
+        <VehicleContext.Provider
+            value={{ vehicles, setVehicles, mapVehicle, setMapVehicle }}
+        >
             {children}
         </VehicleContext.Provider>
     );

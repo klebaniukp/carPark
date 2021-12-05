@@ -6,12 +6,14 @@ import { useFiltersContext } from '../../../context/FiltersContext';
 import { useVehicleContext } from '../../../context/VehicleContext';
 import { IVehicle } from '../../../types/types';
 import { getVehicles } from '../../../services/getVehicles';
+import { useHistory } from 'react-router';
 
 export const ModalCustom = (props: { value: string }) => {
     const [show, setShow] = useState(false);
     const { status, batteryLevelPct, rangeKm } = useFiltersContext();
     const { vehicles, setVehicles } = useVehicleContext();
     const [cars, setCars] = useState(vehicles);
+    const history = useHistory();
 
     useEffect(() => {
         getVehicles()
@@ -40,7 +42,6 @@ export const ModalCustom = (props: { value: string }) => {
                 returnedVehicles.push(car);
             }
         });
-        handleClose();
         return returnedVehicles;
     };
 
@@ -80,6 +81,8 @@ export const ModalCustom = (props: { value: string }) => {
                         variant='primary'
                         onClick={(e) => {
                             setVehicles(handleSubmit(e));
+                            history.push('/');
+                            handleClose();
                         }}
                         type='submit'
                     >
