@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import GoogleMapReact from 'google-map-react';
-import { CarMapComp } from '../carComps/CarMapComp';
 import { useVehicleContext } from '../../../context/VehicleContext';
+import { useFiltersContext } from '../../../context/FiltersContext';
 import { getVehicles } from '../../../services/getVehicles';
-import { stringify } from 'querystring';
-import { api_key } from '../../../constants/apiKey';
+import { ToastMessage } from '../layoutComps/ToastMessage';
+import { CarOnMap } from '../../molecules/carComps/CarOnMap';
+import { CarMapComp } from '../carComps/CarMapComp';
 
 export const Map = () => {
-    let API_KEY = api_key as string;
+    let API_KEY = 'AIzaSyDOeVb2u9YHLIDtw359KuTt9sZx1bIPgB8';
     const { mapVehicle, setMapVehicle } = useVehicleContext();
+    const { isToast, setIsToast } = useFiltersContext();
     const [longitude, setLongitude] = useState(0);
     const [latitude, setLatitude] = useState(0);
 
@@ -46,10 +48,9 @@ export const Map = () => {
         <div style={{ width: '100vw', height: '100vh' }}>
             <div
                 style={{
-                    height: '87vh',
-                    width: '97vw',
-                    left: '1.5vw',
-                    bottom: '1.5vw',
+                    height: '93vh',
+                    width: '100vw',
+                    bottom: 0,
                     position: 'absolute',
                 }}
                 className={''}
@@ -67,6 +68,13 @@ export const Map = () => {
                     />
                 </GoogleMapReact>
             </div>
+            {isToast ? (
+                <div style={{ position: 'absolute', bottom: 0, right: 0 }}>
+                    <ToastMessage showToast={isToast} vehicle={mapVehicle[0]} />
+                </div>
+            ) : (
+                <> </>
+            )}
         </div>
     );
 };

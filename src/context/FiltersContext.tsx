@@ -16,6 +16,9 @@ type ContextType = {
 
     rangeKm: number;
     setRangeKm: Dispatch<SetStateAction<number>>;
+
+    isToast: boolean;
+    setIsToast: Dispatch<SetStateAction<boolean>>;
 };
 
 const FiltersContext = createContext<ContextType>({
@@ -27,6 +30,9 @@ const FiltersContext = createContext<ContextType>({
 
     rangeKm: 5,
     setRangeKm: () => {},
+
+    isToast: true,
+    setIsToast: () => {},
 });
 
 export const useFiltersContext = () => {
@@ -49,6 +55,7 @@ export const FiltersProvider = ({
     const [status, setStatus] = useState<boolean>(true);
     const [batteryLevelPct, setBatteryLevelPct] = useState<number>(5);
     const [rangeKm, setRangeKm] = useState<number>(5);
+    const [isToast, setIsToast] = useState<boolean>(true);
 
     return (
         <FiltersContext.Provider
@@ -59,6 +66,8 @@ export const FiltersProvider = ({
                 setBatteryLevelPct,
                 rangeKm,
                 setRangeKm,
+                isToast,
+                setIsToast,
             }}
         >
             <Navbar />
