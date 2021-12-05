@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { CarImage } from '../../atoms/carComps/CarImage';
 import { useVehicleContext } from '../../../context/VehicleContext';
-import { useHistory } from 'react-router';
 
 export const CarMapComp = (props: {
     lat: number;
@@ -10,14 +9,6 @@ export const CarMapComp = (props: {
 }) => {
     const [isHover, setIsHover] = useState(false);
     const { mapVehicle } = useVehicleContext();
-    const history = useHistory();
-
-    // useEffect(() => {
-    //     console.log(`mapVehicle ${mapVehicle[0]}`);
-    //     if (mapVehicle[0] === undefined) {
-    //         // history.push(`/`);
-    //     }
-    // }, []);
 
     return (
         <>

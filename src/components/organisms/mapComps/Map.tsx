@@ -1,23 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import GoogleMapReact from 'google-map-react';
-import { Wrapper, Status } from '@googlemaps/react-wrapper';
 import { CarMapComp } from '../carComps/CarMapComp';
 import { useVehicleContext } from '../../../context/VehicleContext';
+import { getVehicles } from '../../../services/getVehicles';
+import { stringify } from 'querystring';
+import { api_key } from '../../../constants/apiKey';
 
 export const Map = () => {
-    const API_KEY = 'AIzaSyDRrs1WNeJJaGa-KP_S-01wwSPY6dV85OE';
-    const { mapVehicle } = useVehicleContext();
-
+    let API_KEY = api_key as string;
+    const { mapVehicle, setMapVehicle } = useVehicleContext();
     const [longitude, setLongitude] = useState(0);
     const [latitude, setLatitude] = useState(0);
 
-    // if (mapVehicle[0] !== null) {
-    //     setLongitude(mapVehicle[0].location.longitude);
-    //     setLatitude(mapVehicle[0].location.latitude);
-    // }
-
     useEffect(() => {
-        console.log(`mapVehicle: ${mapVehicle[0].location?.latitude}`);
+        if (mapVehicle[0] === null) {
+            getVehicles()
+                .then((res) => {
+                    console.log(res);
+                    setMapVehicle(res);
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        }
+
         if (
             mapVehicle[0].location?.latitude !== undefined &&
             mapVehicle[0].location?.longitude !== undefined
@@ -52,7 +58,7 @@ export const Map = () => {
                     defaultCenter={defaultProps.center}
                     defaultZoom={defaultProps.zoom}
                     yesIWantToUseGoogleMapApiInternals={true}
-                    key={defaultProps.key}
+                    bootstrapURLKeys={{ key: API_KEY }}
                 >
                     <CarMapComp
                         lat={latitude}
