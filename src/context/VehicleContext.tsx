@@ -48,7 +48,10 @@ export const VehicleProvider = ({
     const [mapVehicle, setMapVehicle] = useState<IVehicle[]>([]);
 
     useEffect(() => {
-        getVehicles().then((data) => setVehicles(data));
+        getVehicles().then((data) => {
+            setVehicles(data);
+            setMapVehicle(data[0]);
+        });
     }, []);
 
     return (
